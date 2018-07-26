@@ -104,9 +104,7 @@ User
  - username: String
  - password: String
  - groups: ObjectId
-```
-## Mockup
-![image](/home/sandra/Descargas/Runouts mockup main web page (1).jpg)
+
 
 ## Links
 
