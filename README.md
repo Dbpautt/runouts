@@ -111,11 +111,11 @@ User
 
 ### Trello
 
-[Link to trello](https://trello.com)
+[Link to trello](https://trello.com/b/SXwUZaO5)
 
 ### Git
 
-[Repository Link](http://github.com)
+[Runouts](https://github.com/Arkhanne/runouts)
 
 [Deploy Link](http://heroku.com)
 
@@ -123,5 +123,3 @@ User
 
 [Slides Link](http://slides.com)
 
-### Mockup 
-[Link]()
