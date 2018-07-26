@@ -106,6 +106,9 @@ User
  - email: String (unique, required)
  - groups: ObjectId
 ```
+## Mockup
+
+![alt text](Mockup.jpg "Mockup")
 
 ## Links
 
