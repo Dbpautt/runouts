@@ -101,8 +101,9 @@ Group
  
 ```
 User
- - username: String
- - password: String
+ - username: String 
+ - password: String (required)
+ - email: String (unique, required)
  - groups: ObjectId
 ```
 
