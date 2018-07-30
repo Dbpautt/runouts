@@ -1,9 +1,18 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-/* GET users listing. */
+const Group = require('../models/group');
+
+/* GET groups */
 router.get('/', (req, res, next) => {
-  res.send('respond with a resource');
+  Group.find()
+    .then(groups => {
+      console.log(groups);
+      res.render('groups', { groups });
+    })
+    .catch(error => {
+      next(error);
+    });
 });
 
 module.exports = router;

@@ -3,7 +3,6 @@ p {
   margin: 0;
 }
 
-
 h1 {
   font-family: 'Facon'; 
   src: url('../fonts/Facon.rtf');
@@ -85,4 +84,8 @@ a {
 
 .card {
   width: 100%;
+}
+
+.group-item {
+  margin: 20px 0;
 }
