@@ -73,6 +73,8 @@ List groups:
 
 Detail groups: 
     GET /groups/:id
+    
+Join a group:
     POST /groups/:id/join
 
 Profile: 
@@ -80,7 +82,7 @@ Profile:
 
 Add group: 
     GET /groups/add
-    POST /groups/add
+    POST /groups
 
 List users: 
     GET /users
@@ -96,7 +98,7 @@ Group
  - day: Number
  - hour: String
  - place: String
- - members: ObjectId
+ - members: [Users]
 ```    
  
 ```
@@ -104,7 +106,7 @@ User
  - username: String 
  - password: String (required)
  - email: String (unique, required)
- - groups: ObjectId
+ - groups: [Groups]  ?????
 ```
 ## Mockup
 
