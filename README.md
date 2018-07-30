@@ -98,7 +98,9 @@ Group
  - day: Number
  - hour: String
  - place: String
+ - owner: User
  - members: [Users]
+ - active: Boolean (default: true)
 ```    
  
 ```
