@@ -9,11 +9,11 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           {{#each members}}
-            <a class="dropdown-item" href="#">{{ this.username }}</a>
+            <a class="dropdown-item" href="/profile/{{ this._id }}">{{ this.username }}</a>
           {{/each}}
         </div>
       </div>
-      <button type="button" class="btn btn-primary">Go</button>
+      <a href="/groups/{{ this._id }}" class="btn btn-primary" role="button" aria-pressed="true">Go</a>
     </div>
   {{/each}}
 </ul>

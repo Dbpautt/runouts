@@ -22,4 +22,15 @@ router.get('/', (req, res, next) => {
     });
 });
 
+router.get('/:id', (req, res, next) => {
+  const { id } = req.params;
+  Group.findById(id)
+    .then(group => {
+      res.render('group_detail', group);
+    })
+    .catch(error => {
+      next(error);
+    });
+});
+
 module.exports = router;
