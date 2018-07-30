@@ -78,3 +78,11 @@ a {
   color: white; 
   font-size: 1rem;
 }
+.index {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  width: 100%;
+}
