@@ -7,8 +7,8 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const authMiddlewares = require('./middlewares/auth');
+const flash = require('connect-flash');
 
-mongoose.connect('mongodb://localhost/runouts');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -16,6 +16,8 @@ const groupsRouter = require('./routes/groups');
 const authRouter = require('./routes/auth');
 
 const app = express();
+
+mongoose.connect('mongodb://localhost/runouts');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -33,6 +35,8 @@ app.use(session({
     maxAge: 24 * 60 * 60 * 1000
   }
 }));
+
+app.use(flash());
 
 app.use(logger('dev'));
 app.use(express.json()); 

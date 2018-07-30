@@ -4,12 +4,24 @@
     <label>Username</label>
     <input type="text" name="username" />
   </div>
+    <div class="field">
+    <label>Email</label>
+    <input type="text" name="email" />
+  </div>
   <div class="field">
     <label>Password</label>
     <input type="password" name="password" />
   </div>
-  {{ message }}
+
   <div class="field submit">
     <button type="submit">Singup</button>
   </div>
+
+
+  {{#if messages.length}}
+    <ul class="validation">
+      {{#each messages}}<li>{{this}}</li>{{/each}}
+    </ul>
+  {{/if}}
+
 </form>

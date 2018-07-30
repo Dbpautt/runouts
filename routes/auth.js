@@ -7,29 +7,38 @@ const User = require('../models/user');
 
 /* GET signup */
 router.get('/signup', (req, res, next) => {
-  res.render('auth/signup');
+  const data = {
+    messages: req.flash('message-name')
+  };
+  res.render('auth/signup', data);
 });
 
 /* POST signup */
 router.post('/signup', (req, res, next) => {
-  const { username, password } = req.body;
-  if (!username || !password) return res.render('auth/signup', { message: 'Fields can\'t be empty. '});
+  const { username, password, email } = req.body;
+  if (!username || !password || !email){
+    req.flash('message-name', 'Fields can\'t be empty. ')
+    return res.redirect('auth/signup')
+  }
+
   User.findOne({ username })
     .then(user => {
       // user exists
+      console.log(user);
       if (user) {
-        return res.render('auth/signup', { message: 'This username is not available.' });
+        req.flash('message-name', 'This username is not available.')
+        return res.redirect('/auth/signup');
       } else {
         // user no exists
         const salt = bcrypt.genSaltSync(saltRounds);
         const hashedPassword = bcrypt.hashSync(password, salt);
-        const newUser = new User({ username, password: hashedPassword });
-        return newUser.save();
+        const newUser = new User({ username, password: hashedPassword, email });
+        newUser.save()
+          .then(user => {
+            req.session.currentUser = user;
+            res.redirect('/');
+          });
       }
-    })
-    .then(user => {
-      req.session.currentUser = user;
-      res.redirect('/');
     })
     .catch(error => {
       next(error);
