@@ -67,3 +67,12 @@ a {
 #carousel-item-10 {
   background-image: url("../images/image_10.jpg");
 }
+
+.index {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  width: 100%;
+}
