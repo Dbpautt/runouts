@@ -7,7 +7,7 @@ const User = require('../models/user');
 
 /* GET signup */
 router.get('/signup', (req, res, next) => {
-  res.render('/auth/signup');
+  res.render('auth/signup');
 });
 
 /* POST signup */
@@ -34,6 +34,10 @@ router.post('/signup', (req, res, next) => {
     .catch(error => {
       next(error);
     });
+});
+
+router.get('/login', (req, res, next) => {
+  res.render('auth/login');
 });
 
 
