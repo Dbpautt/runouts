@@ -64,7 +64,7 @@ router.post('/login', (req, res, next) => {
       }
       if(bcrypt.compareSync(password, user.password)){
         req.session.currentUser = user;
-        res.redirect('/profile');
+        res.redirect('/');
       } else {
         req.flash('message-name', 'User or password incorrect.');
         res.redirect('/auth/login');
@@ -74,8 +74,8 @@ router.post('/login', (req, res, next) => {
 });
 
 router.post('/logout', (req, res, next) => {
-  delete req.session.currentUSer;
+  delete req.session.currentUser;
   res.redirect('/auth/login');
-})
+});
 
 module.exports = router;
