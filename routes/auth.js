@@ -35,7 +35,7 @@ router.post('/signup', (req, res, next) => {
         const user = new User({ username, password: hashedPassword, email });
         req.session.currentUser = user;
         user.save();
-        res.redirect('/profile');
+        res.redirect(`/profile/${user._id}`);
       }
     })
     .catch(error => {

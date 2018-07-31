@@ -2,16 +2,18 @@ const express = require('express');
 const router = express.Router();
 
 const User = require('../models/user');
-
-router.get('/', (req, res, next) => {   // És necessari? Podem fer servir sempre /:id????? Revisar rutes a readme
-  res.send('profile page');
-});
+const Group = require('../models/group');
 
 router.get('/:id', (req, res, next) => {
   const { id } = req.params;
   User.findById(id)
     .then(user => {
-      res.render('profile', { user });
+      console.log(id);
+      Group.find({ members: { $in: id } })
+        .then(groups => {
+          console.log('----', groups);
+          res.render('profile', { user, groups });
+        })
     })
     .catch(error => {
       next(error);

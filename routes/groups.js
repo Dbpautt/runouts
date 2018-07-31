@@ -6,15 +6,8 @@ const User = require('../models/user');
 
 /* GET groups */
 router.get('/', (req, res, next) => {
-  Group.find()
+  Group.find().select({ "name": 1}).populate('members')
     .then(groups => {
-      groups.forEach((group) => {
-        User.find({ _id : { $in : group.members } })
-          .then(users => {
-            group.members = users;
-          })
-      })
-      
       res.render('groups', { groups });
     })
     .catch(error => {
@@ -32,8 +25,7 @@ router.get('/add', (req, res, next) => {
 
 /* POST addGroups */
 router.post('/add', (req, res, next) => {
-  const { name, description, day, hour, place } = req.params;
-  
+  const { name, description, day, hour, place } = req.body;
   Group.findOne({ name })
   .then(group => {
     //group exists
