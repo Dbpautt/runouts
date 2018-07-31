@@ -86,9 +86,27 @@ a {
 }
 
 .card {
-  width: 100%;
+  width: 0 auto;
+  margin: 10px;
+  border-radius: 0;
 }
 
+.card-title {
+  color: white;
+}
+
+#groups-card {
+  background-color: #3bed7c;
+}
+
+#users-card {
+  background-color: #3fb8ff;
+}
+
+.card-info-img {
+  width: 1.5em;
+  float: right;
+}
 
 h2 {
   text-align: center;
