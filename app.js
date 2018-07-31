@@ -18,7 +18,9 @@ const profileRouter = require('./routes/profile');
 
 const app = express();
 
-mongoose.connect('mongodb://localhost/runouts');
+mongoose.connect('mongodb://localhost/runouts')
+.then()
+.catch();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -49,6 +51,12 @@ app.use(function (req, res, next) {
   app.locals.currentUser = req.session.currentUser;
   next();
 });
+
+// app.use(function (req, res, next) {
+//   app.locals.infoNorifications = req.flash('info');
+//   app.locals.errorNorifications = req.flash('error');
+//   next();
+// });
 app.use('/auth', authRouter);
 
 app.use('/', indexRouter);

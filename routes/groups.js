@@ -11,10 +11,11 @@ router.get('/', (req, res, next) => {
       groups.forEach((group) => {
         User.find({ _id : { $in : group.members } })
           .then(users => {
+            console.log("users", users)
             group.members = users;
           })
       })
-      
+      console.log("render", groups);
       res.render('groups', { groups });
     })
     .catch(error => {

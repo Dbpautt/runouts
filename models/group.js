@@ -8,7 +8,7 @@ const groupSchema = new Schema({
   hour: String,
   place: String,
   owner: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
-  members: Array,
+  members: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
   active: {type: Boolean, default: true}
 }, {
   timestamps: {

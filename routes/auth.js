@@ -7,9 +7,9 @@ const User = require('../models/user');
 
 /* GET signup */
 router.get('/signup', (req, res, next) => {
-  const data = {
-    messages: req.flash('message-name')
-  };
+  // const data = {
+  //   messages: req.flash('message-name')
+  // };
   res.render('auth/signup', data);
 });
 
