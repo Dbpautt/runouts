@@ -11,8 +11,8 @@ const groups = [
     day: 0,
     hour: "7:00",
     place: "Barcelona",
-    owner: ["5b5f36a944e3092c6d945e7e"],
-    members: ["5b5f36a944e3092c6d945e7e"],
+    owner: ["5b5f00cbc30b5f326061f45e"],
+    members: ["5b5f00cbc30b5f326061f45e", "5b5f05a558aa2836371abf40"],
     active: true
   },
   {
@@ -21,8 +21,8 @@ const groups = [
     day: 0,
     hour: "8:00",
     place: "Madrid",
-    owner: ["5b5f36a944e3092c6d945e7e"],
-    members: ["5b5f36a944e3092c6d945e7e", "5b5f44c3101f483666f44db5"],
+    owner: ["5b5f062f44cef436bc6f00c7"],
+    members: ["5b5f062f44cef436bc6f00c7", "5b5f00cbc30b5f326061f45e"],
     active: true
   },
 ];

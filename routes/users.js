@@ -8,13 +8,13 @@ const Group = require('../models/group');
 router.get('/', (req, res, next) => {
   User.find()
     .then(users => {
-      users.forEach((group) => {
-        Group.find({ members : users._id })
+      users.forEach((user) => {
+        Group.find({ members : user._id })
           .then(groups => {
-            group.name = groups;
+            groups.name = groups;
+            console.log(groups);
           })
       })
-      
       res.render('users', { users });
     })
     .catch(error => {
