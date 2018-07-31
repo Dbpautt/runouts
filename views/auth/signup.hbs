@@ -1,22 +1,18 @@
-<h2>signup</h2>
-<form method="POST" action="/auth/signup">
-  <div class="field">
-    <label>Username</label>
-    <input type="text" name="username" />
-  </div>
-    <div class="field">
-    <label>Email</label>
-    <input type="text" name="email" />
-  </div>
-  <div class="field">
-    <label>Password</label>
-    <input type="password" name="password" />
-  </div>
+<h2>Please, Sign up!</h2>
+<form method="POST" action="/auth/signup" class="form-login">
+  <label for="inputUser" class="sr-only">Username</label>
+  <input id="inputUser" class="field form-control" type="text" name="username" placeholder="Username"/>
 
-  <div class="field submit">
-    <button type="submit">Singup</button>
-  </div>
+  <label for="inputEmail" class="sr-only">Email</label>
+  <input id="inputEmail" class="field form-control" type="text" name="email" placeholder="johndoe@john.com"/>
 
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input id="inputPassword" class="field form-control" type="password" name="password" placeholder="Password"/> 
+  {{ message }}
+  <div class="field submit div-login">
+    <button type="submit" class="btn btn-lg btn-primary btn-block">Log in</button>
+  </div>
+</form>
 
   {{#if messages.length}}
     <ul class="validation">
