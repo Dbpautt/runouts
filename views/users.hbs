@@ -1,8 +1,11 @@
 <h3>Users</h3>
-<ul>
-  {{#each users}}
+<ul class="users-list">
+    {{#each users}}
     <div class="users-item">
-      <a href="/profile/{{ this._id }}">{{ username }}</a>    
+        <div class="card">
+            <img src="/images/profile.jpg" alt="" class="profile-img">
+            <a href="/profile/{{ this._id }}">{{ username }}</a>
+        </div>
     </div>
-  {{/each}}
+    {{/each}}
 </ul>

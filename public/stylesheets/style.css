@@ -144,3 +144,31 @@ h2 {
   display: block;
   width: 100%;
 }
+
+
+.users-list{
+  /*display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;*/
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+
+.users-item {
+  display: flex;
+  align-items: left;
+  padding: 10px;
+}
+
+.card {
+  flex-direction: row;
+  height: 100px;
+  align-items: center;
+}
+
+
+.profile-img {
+  width: 100px;
+}
