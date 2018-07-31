@@ -1,0 +1,19 @@
+<h3>Users</h3>
+<ul>
+  {{#each users}}
+    <div class="users-item">
+      <h5>{{ username }}</h5>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Groups
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          {{#each groups}}
+            <a class="dropdown-item" href="/profile/{{ this._id }}">{{ this.name }}</a>
+          {{/each}}
+        </div>
+      </div>
+      <a href="/groups/{{ this._id }}" class="btn btn-primary" role="button" aria-pressed="true">Go</a>
+    </div>
+  {{/each}}
+</ul>
