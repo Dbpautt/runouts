@@ -1,7 +1,15 @@
-<h3>{{ user.username }}</h3>
 {{!-- <button type="button" class="btn btn-success button-add">+</button> --}}
-<a href="/groups/add" class="btn btn-success button-add" role="button" aria-pressed="true">+</a>
 
+  <label for="inputUser" class="sr-only">Username</label>
+  <h3><label>{{ user.username }}</label></h3>
+  
+  <label for="inputEmail" class="sr-only">Email</label>
+  <p><label>Email:  {{ user.email }}</label></p>
+
+<a href="/groups/add" class="btn btn-success button-add" role="button" aria-pressed="true">+</a>
+<br />
+<br />
+<label> My Groups: </label>
 <ul>
   {{#each groups}}
     <div class="card">

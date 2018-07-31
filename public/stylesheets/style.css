@@ -8,6 +8,10 @@ h1 {
   src: url('../fonts/Facon.rtf');
 }
 
+h5 {
+  font-size: 2em;
+}
+
 body {
   padding-top: 56px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -96,8 +100,13 @@ a {
   color: white;
 }
 
+.card-text {
+  font-size: 1.1em;
+}
+
 #groups-card {
   background-color: #3bed7c;
+  margin-top: 20px;
 }
 
 #users-card {
@@ -179,7 +188,7 @@ h2 {
 
 .card {
   flex-direction: row;
-  height: 100px;
+  height: 120px;
   align-items: center;
 }
 
