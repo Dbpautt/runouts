@@ -85,10 +85,21 @@ a {
   flex-direction: column;
 }
 
-.card {
-  width: 100%;
+.index .card {
+  margin: 10px;
+  padding: 20px;
 }
 
+.card-body .btn {
+  height: 29px;
+  font-size: 1rem;
+  /* text-align: center; */
+  padding: .2rem;
+}
+
+.card-text {
+  padding: .4rem;
+}
 
 h2 {
   text-align: center;
@@ -160,7 +171,7 @@ h2 {
 
 .card {
   flex-direction: row;
-  height: 100px;
+  height: 120px;
   align-items: center;
 }
 
