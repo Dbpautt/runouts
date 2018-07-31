@@ -60,8 +60,8 @@ app.use(function (req, res, next) {
 app.use('/auth', authRouter);
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/groups', groupsRouter);
+app.use('/users', authMiddlewares.requireUser, usersRouter);
+app.use('/groups', authMiddlewares.requireUser, groupsRouter);
 app.use('/profile', profileRouter);
 
 // catch 404 and forward to error handler
