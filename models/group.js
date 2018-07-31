@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 const groupSchema = new Schema({
   name: String,
   description: String,
-  day: Number,
+  day: String,
   hour: String,
   place: String,
   owner: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
-  members: Array,
+  members: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
   active: {type: Boolean, default: true}
 }, {
   timestamps: {

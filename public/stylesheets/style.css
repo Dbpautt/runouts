@@ -147,9 +147,6 @@ h2 {
 
 
 .users-list{
-  /*display:flex;
-  flex-wrap: wrap;
-  justify-content: space-between;*/
   display: flex;
   flex-direction: column;
   padding: 15px;
@@ -158,7 +155,6 @@ h2 {
 
 .users-item {
   display: flex;
-  align-items: left;
   padding: 10px;
 }
 
@@ -168,7 +164,14 @@ h2 {
   align-items: center;
 }
 
+.card a {
+  padding-left: 20px;
+  font-size: 1.5rem;
+}
+
 
 .profile-img {
-  width: 100px;
+  width: 70px;
+  margin-left: 10px;
+  border-radius: 50%;
 }
