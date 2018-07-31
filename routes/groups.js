@@ -15,6 +15,38 @@ router.get('/', (req, res, next) => {
     });
 });
 
+/* GET addGroups */
+router.get('/add', (req, res, next) => {
+  const data = {
+    messages: req.flash('message-name')
+  };
+  res.render('add_group', data);
+});
+
+/* POST addGroups */
+router.post('/add', (req, res, next) => {
+  const { name, description, day, hour, place } = req.body;
+  Group.findOne({ name })
+  .then(group => {
+    //group exists
+    if(group) {
+      req.flash('message-name', 'This group name is not available.')
+      return res.redirect('add_group');
+    } else {
+      //group no exists
+      owner = req.session.currentUser;
+      const members = [];
+      members.push(req.session.currentUser);
+      const group = new Group({ name, description, day, hour, place, owner, members });
+      group.save();
+      res.redirect('/groups');
+    }
+  })
+  .catch(error => {
+    next(error);
+  })
+});
+
 router.get('/:id', (req, res, next) => {
   const { id } = req.params;
   Group.findById(id)
@@ -24,6 +56,8 @@ router.get('/:id', (req, res, next) => {
     .catch(error => {
       next(error);
     });
-});
+  });
+  
+  module.exports = router;
 
-module.exports = router;
+

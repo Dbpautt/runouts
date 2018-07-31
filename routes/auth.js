@@ -7,9 +7,9 @@ const User = require('../models/user');
 
 /* GET signup */
 router.get('/signup', (req, res, next) => {
-  // const data = {
-  //   messages: req.flash('message-name')
-  // };
+  const data = {
+    messages: req.flash('message-name')
+  };
   res.render('auth/signup', data);
 });
 
@@ -35,7 +35,7 @@ router.post('/signup', (req, res, next) => {
         const user = new User({ username, password: hashedPassword, email });
         req.session.currentUser = user;
         user.save();
-        res.redirect('/profile');
+        res.redirect(`/profile/${user._id}`);
       }
     })
     .catch(error => {

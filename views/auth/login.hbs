@@ -1,15 +1,12 @@
-<h2>login</h2>
-<form method="POST" action="/auth/login">
-  <div class="field">
-    <label>Username</label>
-    <input type="text" name="username" />
-  </div>
-  <div class="field">
-    <label>Password</label>
-    <input type="password" name="password" />
-  </div>
+<h2>Welcome back!</h2>
+<form method="POST" action="/auth/login" class="form-login">
+  <label for="inputUser" class="sr-only">Username</label>
+  <input id="inputUser" class="field form-control" type="text" name="username" placeholder="Username"/>
+
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input id="inputPassword" class="field form-control" type="password" name="password" placeholder="Password"/> 
   {{ message }}
-  <div class="field submit">
-    <button type="submit">Login</button>
+  <div class="field submit div-login">
+    <button type="submit" class="btn btn-lg btn-primary btn-block">Log in</button>
   </div>
 </form>
