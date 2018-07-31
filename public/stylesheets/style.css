@@ -89,3 +89,7 @@ a {
 .group-item {
   margin: 20px 0;
 }
+
+.button-add {
+  border-radius: 50%;
+}

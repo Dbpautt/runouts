@@ -6,7 +6,7 @@ const User = require('../models/user');
 
 /* GET groups */
 router.get('/', (req, res, next) => {
-  Group.find().select({ "username": 1}).populate('members')
+  Group.find().select({ "name": 1}).populate('members')
     .then(groups => {
       res.render('groups', { groups });
     })
