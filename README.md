@@ -78,7 +78,7 @@ Join a group:
     POST /groups/:id/join
 
 Profile: 
-    GET /profile
+    GET /profile/:id
 
 Add group: 
     GET /groups/add

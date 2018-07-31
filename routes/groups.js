@@ -1,9 +1,36 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-/* GET users listing. */
+const Group = require('../models/group');
+const User = require('../models/user');
+
+/* GET groups */
 router.get('/', (req, res, next) => {
-  res.send('respond with a resource');
+  Group.find()
+    .then(groups => {
+      groups.forEach((group) => {
+        User.find({ _id : { $in : group.members } })
+          .then(users => {
+            group.members = users;
+          })
+      })
+      
+      res.render('groups', { groups });
+    })
+    .catch(error => {
+      next(error);
+    });
+});
+
+router.get('/:id', (req, res, next) => {
+  const { id } = req.params;
+  Group.findById(id)
+    .then(group => {
+      res.render('group_detail', group);
+    })
+    .catch(error => {
+      next(error);
+    });
 });
 
 module.exports = router;
