@@ -8,16 +8,24 @@ router.get('/:id', (req, res, next) => {
   const { id } = req.params;
   User.findById(id)
     .then(user => {
-      console.log(id);
       Group.find({ members: { $in: id } })
         .then(groups => {
-          console.log('----', groups);
-          res.render('profile', { user, groups });
+          console.log(req.session.currentUser);
+          console.log("-------------");
+          console.log(user);
+
+          if(req.session.currentUser._id == user._id){
+            res.render('profile', { user, groups });
+          } else{
+            res.render('nl_profile', { user, groups });
+          }
         })
     })
     .catch(error => {
       next(error);
     });
 });
+
+
 
 module.exports = router;
