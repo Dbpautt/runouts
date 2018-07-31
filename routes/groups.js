@@ -6,16 +6,8 @@ const User = require('../models/user');
 
 /* GET groups */
 router.get('/', (req, res, next) => {
-  Group.find()
+  Group.find().populate('members')
     .then(groups => {
-      groups.forEach((group) => {
-        User.find({ _id : { $in : group.members } })
-          .then(users => {
-            console.log("users", users)
-            group.members = users;
-          })
-      })
-      console.log("render", groups);
       res.render('groups', { groups });
     })
     .catch(error => {
