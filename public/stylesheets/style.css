@@ -272,6 +272,16 @@ ul {
 }
 
 
+/* group detail */
+.group-detail {
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+  width: 0 auto;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 0;
+}
 
 /* signup / signin */
 

@@ -1,7 +1,23 @@
-<h3>Group details</h3>
-<h4>{{ name }}</h4>
-<p><label>Day:  {{ day }}</label></p>
-<p><label>Hour:  {{ hour }}</label></p>
-<p><label>Place:  {{ place }}</label></p>
-<p><label>Description:  {{ description }}</label></p>
-<a href="/groups" class="btn btn-info" >Return</a>
+<div class="list-title">
+    <h2>Group details</h2>
+</div>
+
+
+<div class="group-detail-item">
+    <div class="group-detail">
+    <h3>{{ name }}</h3>
+    <p>
+        <h4>Day:  </h4><label>{{ day }}</label>
+    </p>
+    <p>
+        <h4>Hour: </h4><label>{{ hour }}</label>
+    </p>
+    <p>
+        <h4>Place: </h4><label>{{ place }}</label>
+    </p>
+    <p>
+        <h4>Description:</h4><label> {{ description }}</label>
+    </p>
+    <a href="/groups">Return</a>
+</div>
+</div>
