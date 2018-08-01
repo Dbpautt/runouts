@@ -252,6 +252,14 @@ a {
   color: white;
 }
 
+.groups-list {
+  margin-top: 70px;
+}
+
+.dropdown-toggle {
+  border-color: #ff9100;
+}
+
 
 /* users list */
 
@@ -269,6 +277,20 @@ ul {
 
 .btn-secondary {
   background-color: #ff9100;
+}
+
+.list-title {
+  background-color: white;
+  color: #ff9100;
+  text-align: center;
+  position: fixed;
+  top: 56px;
+  z-index: 1030;
+  width: 100%;
+}
+
+.users-list {
+  margin-top: 70px;
 }
 
 
