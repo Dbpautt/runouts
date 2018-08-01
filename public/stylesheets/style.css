@@ -25,19 +25,23 @@ body {
   padding-top: 56px;
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
   align-items: center;
-  background-color: white;
+  background-color: #eeeeee;
   height: 100%;
 }
 
 a {
-  color: #00B7FF;
+  color: #ff9100;
 }
 
 
 /* navbar */
 
 .navbar {
-  background-color: #526f95;
+  background-color: #ff9100;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
 }
 
 .navbar-brand {
@@ -50,7 +54,7 @@ a {
   top: -56px;
   width: 0;
   height: auto;
-  background-color: #052f5f;
+  background-color: #ff9100;
   transition: heigh .5s;
 }
 
@@ -61,12 +65,16 @@ a {
   padding-left: 20px;
 }
 
+.nav-link {
+  color: white;
+}
+
 .logout-btn {
   border:none;
   outline:none;
   background:none;
   cursor:pointer;
-  color:#f95454;
+  color: black;
   padding:0;
 }
 
@@ -130,7 +138,7 @@ a {
 }
 
 .card-title {
-  color: black;
+  color: white;
 }
 
 .card-text {
@@ -138,12 +146,12 @@ a {
 }
 
 #groups-card {
-  background-color: #0cb88a;
+  background-color: #ff9100;
   margin-top: 20px;
 }
 
 #users-card {
-  background-color: #2889b3;
+  background-color: #ff9100;
 }
 
 .card-info-img {
@@ -155,17 +163,17 @@ a {
   flex-direction: row;
   height: 120px;
   align-items: center;
-  color: black;
+  color: white;
   width: 0 auto;
   margin: 10px;
-  padding: 10px 0 10px 0;
+  /* padding: 10px 0 10px 0; */
   border-radius: 0;
-
 }
 
 .card a {
   padding-left: 20px;
   font-size: 1.5rem;
+  align-self: flex-end;
 }
 
 
@@ -179,7 +187,7 @@ a {
 
 .button-add {
   border-radius: 50%;
-  background-color: #0cb88a;
+  background-color: #ff9100;
 }
 
 .profile-container {
@@ -187,7 +195,7 @@ a {
   flex-direction: column;
   align-items: center;
   height: 100%;
-  background-color: white;
+  background-color: #eeeeee;
   color: white;
 }
 
@@ -195,7 +203,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #2889b3;
+  background-color: white;
   width: 90%;
   padding-bottom: 20px;
   height: 100%;
@@ -228,7 +236,7 @@ a {
 }
 
 .profile-card-body{
-  background-color: white;
+  background-color: #ff9100;
   color: #2889b3;
   height: 100px;
   align-items: center;
@@ -240,7 +248,7 @@ a {
 } 
 
 .profile-card-body a {
-  color: #2889b3;
+  color: white;
 }
 
 
