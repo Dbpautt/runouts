@@ -259,8 +259,16 @@ ul {
   padding-left: 0;
 }
 
+.groups-item .card {
+  justify-content: space-between;
+}
+
 .card a {
   align-self: center;
+}
+
+.btn-secondary {
+  background-color: #ff9100;
 }
 
 
