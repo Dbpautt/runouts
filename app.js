@@ -9,6 +9,7 @@ const MongoStore = require('connect-mongo')(session);
 const authMiddlewares = require('./middlewares/auth');
 const flash = require('connect-flash');
 
+require('./handlebarsjs/helpers');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');

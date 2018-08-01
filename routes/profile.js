@@ -14,11 +14,13 @@ router.get('/:id', (req, res, next) => {
           console.log("-------------");
           console.log(user);
 
-          if(req.session.currentUser._id == user._id){
-            res.render('profile', { user, groups });
-          } else{
-            res.render('nl_profile', { user, groups });
-          }
+          res.render('profile', { user, groups });
+
+          // if(req.session.currentUser._id == user._id){
+          //   res.render('profile', { user, groups });
+          // } else{
+          //   res.render('nl_profile', { user, groups });
+          // }
         })
     })
     .catch(error => {

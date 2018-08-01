@@ -4,8 +4,9 @@
     <h2>{{ user.username }}</h2>
     <p>{{ user.email }}</p>
   <div class="profile-groups-title-container">
-    <a href="/groups/add" class="btn btn-success button-add" role="button" aria-pressed="true">+</a>
-  
+    {{#ifCond currentUser._id  user._id }}
+      <a href="/groups/add" class="btn btn-success button-add" role="button" aria-pressed="true">+</a>
+    {{/ifCond}}
   </div>
   <ul>
     {{#each groups}}
