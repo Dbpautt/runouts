@@ -188,6 +188,7 @@ a {
 .button-add {
   border-radius: 50%;
   background-color: #ff9100;
+  border-color: #ff9100;
 }
 
 .profile-container {
@@ -196,7 +197,7 @@ a {
   align-items: center;
   height: 100%;
   background-color: #eeeeee;
-  color: white;
+  color: black;
 }
 
 .profile-header {
