@@ -1,5 +1,6 @@
 messages = {
-  error: 'dsafsa'
+  error: 'User or password incorrect.',
+  info: '',
 }
 
 module.exports = messages;
