@@ -3,6 +3,7 @@ const router = express.Router();
 
 const Group = require('../models/group');
 const User = require('../models/user');
+const notifications = require('../notifications');
 
 /* GET groups */
 router.get('/', (req, res, next) => {
@@ -17,21 +18,23 @@ router.get('/', (req, res, next) => {
 
 /* GET addGroups */
 router.get('/add', (req, res, next) => {
-  const data = {
-    messages: req.flash('message-name')
-  };
-  res.render('add_group', data);
+  res.render('add_group');
 });
 
 /* POST addGroups */
 router.post('/add', (req, res, next) => {
   const { name, description, day, hour, place } = req.body;
+  if (!name){
+    req.flash('info', notifications.noEmptyFields)
+    return res.redirect('/groups/add')
+  }
+
   Group.findOne({ name })
   .then(group => {
     //group exists
     if(group) {
-      req.flash('message-name', 'This group name is not available.')
-      return res.redirect('add_group');
+      req.flash('info', notifications.groupNoAvailable)
+      return res.redirect('/groups/add');
     } else {
       //group no exists
       owner = req.session.currentUser;

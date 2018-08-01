@@ -4,29 +4,28 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 const User = require('../models/user');
+const notifications = require('../notifications');
+
 
 /* GET signup */
 router.get('/signup', (req, res, next) => {
-  const data = {
-    messages: req.flash('message-name')
-  };
-  res.render('auth/signup', data);
+  
+  res.render('auth/signup');
 });
 
 /* POST signup */
 router.post('/signup', (req, res, next) => {
   const { username, password, email } = req.body;
   if (!username || !password || !email){
-    req.flash('message-name', 'Fields can\'t be empty. ')
-    return res.redirect('auth/signup')
+    req.flash('info', notifications.noEmptyFields)
+    return res.redirect('/auth/signup')
   }
 
   User.findOne({ username })
     .then(user => {
       // user exists
-      console.log(user);
       if (user) {
-        req.flash('message-name', 'This username is not available.')
+        req.flash('info', notifications.userAlreadyTaked)
         return res.redirect('/auth/signup');
       } else {
         // user no exists
@@ -45,7 +44,7 @@ router.post('/signup', (req, res, next) => {
 
 router.get('/login', (req, res, next) => {
   const data = {
-    messages: req.flash('message-name')
+    messages: req.flash('info')
   };
   res.render('auth/login', data);
 });
@@ -53,20 +52,20 @@ router.get('/login', (req, res, next) => {
 router.post('/login', (req, res, next) => {
   const { username, password } = req.body;
   if(!username || !password ) {
-    req.flash('message-name', 'Write user and password.');
+    req.flash('info', notifications.require);
     return res.redirect('/auth/login');
   }
   User.findOne({ username })
     .then(user => {
       if(!user){
-        req.flash('message-name', 'User or password incorrect.');
+        req.flash('info', notifications.incorrectLogin);
         res.redirect('/auth/login');
       }
       if(bcrypt.compareSync(password, user.password)){
         req.session.currentUser = user;
         res.redirect('/');
       } else {
-        req.flash('message-name', 'User or password incorrect.');
+        req.flash('info', notifications.incorrectLogin);
         res.redirect('/auth/login');
       }
     })

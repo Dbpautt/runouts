@@ -12,7 +12,6 @@ router.get('/', (req, res, next) => {
         Group.find({ members : user._id })
           .then(groups => {
             groups.name = groups;
-            console.log(groups);
           })
       })
       res.render('users', { users });
