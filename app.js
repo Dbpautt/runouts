@@ -49,14 +49,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function (req, res, next) {
   app.locals.currentUser = req.session.currentUser;
+  app.locals.infoNotifications = req.flash('info');
+  app.locals.errorNotifications = req.flash('error');
   next();
 });
 
-// app.use(function (req, res, next) {
-//   app.locals.infoNorifications = req.flash('info');
-//   app.locals.errorNorifications = req.flash('error');
-//   next();
-// });
 app.use('/auth', authRouter);
 
 app.use('/', indexRouter);
