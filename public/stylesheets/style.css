@@ -256,10 +256,6 @@ a {
   margin-top: 70px;
 }
 
-.dropdown-toggle {
-  border-color: #ff9100;
-}
-
 
 /* users list */
 
@@ -294,74 +290,13 @@ ul {
 }
 
 
+/* dropdown */
 
-/* signup / signin */
-
-/* .field {
-  padding: 10px;
+.dropdown-toggle {
+  border-color: #ff9100;
 }
 
-.form-login {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
-  display: block;
-  text-align: center;
+.card .dropdown-item {
+  color: #ff9100;
+  font-size: 1em;
 }
-
-.div-login button {
-  border-radius: .3px;
-  line-height: 1.5;
-  font-size: 1.25rem;
-  padding: .5rem 1rem;
-  vertical-align: middle;
-  font-weight: 400;
-  text-align: center;
-  white-space: nowrap;
-  color: #fff;
-  background-color: #7b848c;
-  border-color: #007bff;
-}
-
-.form-control {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
-  padding: 10px;
-  font-size: 16px;
-  display: block;
-  width: 100%;
-} */
-
-
-
-/* .current-user {
-  color: white; 
-  font-size: 1rem;
-} */
-
-
-/* .group-item {
-  margin: 20px 0;
-} */
-
-
-
-/* .users-list{
-  display: flex;
-  flex-direction: column;
-  padding: 15px;
-}
-
-
-.users-item {
-  display: flex;
-  padding: 10px;
-} */
-
-
-
