@@ -10,10 +10,6 @@ router.get('/:id', (req, res, next) => {
     .then(user => {
       Group.find({ members: { $in: id } })
         .then(groups => {
-          console.log(req.session.currentUser);
-          console.log("-------------");
-          console.log(user);
-
           res.render('profile', { user, groups });
 
           // if(req.session.currentUser._id == user._id){
