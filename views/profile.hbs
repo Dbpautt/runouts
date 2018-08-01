@@ -2,7 +2,9 @@
     <img src="/images/profile.png" alt="" class="profile-img">
   <section class="profile-header">
     <h2>{{ user.username }}</h2>
-    <p>{{ user.email }}</p>
+    {{#ifCond currentUser._id  user._id }}
+      <p>{{ user.email }}</p>
+    {{/ifCond}}
   <div class="profile-groups-title-container">
     {{#ifCond currentUser._id  user._id }}
       <a href="/groups/add" class="btn btn-success button-add" role="button" aria-pressed="true">+</a>
