@@ -1,24 +1,24 @@
-{{!-- <button type="button" class="btn btn-success button-add">+</button> --}}
-
-  <label for="inputUser" class="sr-only">Username</label>
-  <h3><label>{{ user.username }}</label></h3>
+{{!-- <label for="inputUser" class="sr-only">Username</label> --}}
+<section class="profile-container">
+  <img src="/images/profile.png" alt="" class="profile-img">
+  <h2>{{ user.username }}</h2>
+  <p>{{ user.email }}</p>
+  <div class="profile-groups-title-container">
+    <h4>My Groups</h4>
+    <a href="/groups/add" class="btn btn-success button-add" role="button" aria-pressed="true">+</a>
   
-  <label for="inputEmail" class="sr-only">Email</label>
-  <p><label>Email:  {{ user.email }}</label></p>
-
-<a href="/groups/add" class="btn btn-success button-add" role="button" aria-pressed="true">+</a>
-<br />
-<br />
-<label> My Groups: </label>
-<ul>
-  {{#each groups}}
-    <div class="card">
-      <div class="card-body">
-        <a class="card-title" href="/groups/{{ this._id }}">{{ this.name }}</a>
+  </div>
+  <ul>
+    {{#each groups}}
+      <div class="card">
+        <div class="card-body">
+          <a class="card-title" href="/groups/{{ this._id }}">{{ this.name }}</a>
+        </div>
       </div>
-    </div>
-  {{/each}}
-</ul>
+    {{/each}}
+  </ul>
+</section>
+
 
 
 

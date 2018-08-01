@@ -13,27 +13,31 @@
 
 <body>
   
-  <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
+  <nav class="navbar header-top fixed-top navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">RUNOUTS</a>
-    <p class="current-user"> {{ currentUser.username }} </p>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav ml-md-auto d-md-flex">
+        {{#if currentUser}}
         <li class="nav-item">
-          <a class="nav-link" href="../auth/login">Log in
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../auth/signup">Sign up</a>
+          <a class="nav-link" href="../profile/{{ currentUser._id }}">{{ currentUser.username }}</a>
         </li>
         <li class="nav-item">
           <form class="form-inline my-2 my-lg-0" action="/auth/logout" method="post">
-            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button>
+            <button type="submit" class="logout-btn">Logout</button>
           </form>
         </li>
+        {{else}}
+          <li class="nav-item">
+          <a class="nav-link" href="../auth/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../auth/signup">Signup</a>
+        </li>
+        {{/if}}
       </ul>
     </div>
   </nav>

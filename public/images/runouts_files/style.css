@@ -8,20 +8,8 @@ h1 {
   src: url('../fonts/Facon.rtf');
 }
 
-h2 {
-  /* text-align: center;
-  margin-bottom: 1rem;
-  font-size: 1.75rem; */
+h5 {
   font-size: 2em;
-}
-
-h3 {
-  font-size: 1.75em;
-}
-
-h4 {
-  font-size: 1.5em;
-  margin: 0;
 }
 
 body {
@@ -29,6 +17,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   align-items: center;
   padding-bottom: 40px;
+  background-color: #f5f5f5;
 }
 
 a {
@@ -38,31 +27,6 @@ a {
 .navbar-brand {
   font-family: 'Facon'; 
   src: url('../fonts/Facon.rtf');
-}
-
-.navbar-collapse {
-  position: fixed;
-  top: -56px;
-  width: 0;
-  height: auto;
-  background-color: #343a40;
-  transition: heigh .5s;
-}
-
-.navbar-collapse.show {
-  top: 56px;
-  right: 0;
-  width: 30%;
-  padding-left: 20px;
-}
-
-.logout-btn{
-  border:none;
-  outline:none;
-  background:none;
-  cursor:pointer;
-  color:#f95454;
-  padding:0;
 }
 
 .carousel, .carousel-inner .carousel-item {
@@ -154,7 +118,12 @@ a {
   float: right;
 }
 
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
 
+}
 
 .field {
   padding: 10px;
@@ -184,7 +153,7 @@ a {
   text-align: center;
   white-space: nowrap;
   color: #fff;
-  background-color: #7b848c;
+  background-color: #007bff;
   border-color: #007bff;
 }
 .group-item {
@@ -221,16 +190,13 @@ a {
   flex-direction: row;
   height: 120px;
   align-items: center;
-  color: black;
-  width: 100%;
-
 }
 
 .card a {
   padding-left: 20px;
   font-size: 1.5rem;
-  
 }
+
 
 .profile-img {
   width: 70px;
@@ -240,26 +206,4 @@ a {
 
 .button-add {
   border-radius: 50%;
-}
-
-.profile-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.profile-container .profile-img {
-  margin: 20px;
-  width: 150px; 
-}
-
-/* .profile-container .button-add {
-  margin: 40px;
-} */
-
-.profile-groups-title-container {
-  width: 100%;
-  display: flex;
-  margin-top: 40px;
-  justify-content: space-around;
 }
