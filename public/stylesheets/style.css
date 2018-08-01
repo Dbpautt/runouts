@@ -253,6 +253,16 @@ a {
 }
 
 
+/* users list */
+
+ul {
+  padding-left: 0;
+}
+
+.card a {
+  align-self: center;
+}
+
 
 
 /* signup / signin */
