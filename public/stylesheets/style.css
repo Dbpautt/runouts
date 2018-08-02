@@ -365,3 +365,22 @@ ul {
   border-color: #ff9100;
   margin-top: 20px;
 }
+
+/*  add group form */
+
+.form-addgroup {
+    margin: 70px;
+
+  
+  }
+  .btn-login {
+    background-color: #ff9100;
+    color: white;
+    border-color: #ff9100;
+    margin-top: 20px;
+}
+
+.form-inputs {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
