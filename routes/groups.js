@@ -53,7 +53,6 @@ router.post('/add', (req, res, next) => {
 /* JOIN groups */
 router.post('/:id', (req, res, next) => {
   const { id } = req.params;
-  console.log('------------------');
   Group.find({ "$and": [{ _id: id }, { members: { "$nin": [req.session.currentUser._id] } } ] } )
     .then(group => {
       if (group.length === 1) {
