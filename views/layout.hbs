@@ -42,13 +42,21 @@
 
   {{{body}}}
   
-    {{#each infoNotifications}}
-  <div class="error">
-      <span>
-        {{this}}
-      </span>
-  </div>
-    {{/each}}
+  {{#each infoNotifications}}
+    <div class="error">
+        <span>
+          {{this}}
+        </span>
+    </div>
+  {{/each}}
+
+  {{#each errorNotifications}}
+    <div class="error">
+        <span>
+          {{this}}
+        </span>
+    </div>
+  {{/each}}
 
 
   <script src="/javascripts/jquery-3.3.1.slim.min.js"></script>

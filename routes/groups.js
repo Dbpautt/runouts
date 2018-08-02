@@ -53,15 +53,17 @@ router.post('/add', (req, res, next) => {
 /* JOIN groups */
 router.post('/:id', (req, res, next) => {
   const { id } = req.params;
-  console.log(id);
+  console.log('------------------');
   Group.find({ "$and": [{ _id: id }, { members: { "$nin": [req.session.currentUser._id] } } ] } )
     .then(group => {
       if (group.length === 1) {
         group[0].members.push(req.session.currentUser._id);
-        group[0].save();
+        group[0].save(); 
+      } else {
+        req.flash('error', notifications.alreadyJoined);
+        res.redirect(`/groups/${id}`);
       }
-
-    res.redirect('/groups');
+      res.redirect('/groups');
   })
   .catch(error => {
     next(error);
@@ -79,8 +81,6 @@ router.get('/:id', (req, res, next) => {
     });
   });
   
-
-
   module.exports = router;
 
 
