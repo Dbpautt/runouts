@@ -50,6 +50,24 @@ router.post('/add', (req, res, next) => {
   })
 });
 
+/* JOIN groups */
+router.post('/:id', (req, res, next) => {
+  const { id } = req.body;
+  Group.findOne({ id })
+  .then(group => {
+    if(group) {
+      console.log(group.members);
+      group.members.push(req.session.currentUser);
+      console.log(group.members);
+      group.save();
+      res.redirect('/groups');
+    }
+  })
+  .catch(error => {
+    next(error);
+  })
+});
+
 router.get('/:id', (req, res, next) => {
   const { id } = req.params;
   Group.findById(id)
@@ -61,6 +79,8 @@ router.get('/:id', (req, res, next) => {
     });
   });
   
+
+
   module.exports = router;
 
 
