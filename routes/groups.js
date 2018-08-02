@@ -56,9 +56,7 @@ router.post('/:id', (req, res, next) => {
   Group.findOne({ id })
   .then(group => {
     if(group) {
-      console.log(group.members);
       group.members.push(req.session.currentUser);
-      console.log(group.members);
       group.save();
       res.redirect('/groups');
     }
