@@ -8,6 +8,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const authMiddlewares = require('./middlewares/auth');
 const flash = require('connect-flash');
+require('dotenv').config();
 
 require('./handlebarsjs/helpers');
 
@@ -19,7 +20,7 @@ const profileRouter = require('./routes/profile');
 
 const app = express();
 
-mongoose.connect('mongodb://localhost/runouts')
+mongoose.connect(process.env.MONGODB_URI)
 .then()
 .catch();
 
