@@ -42,9 +42,14 @@
 
   {{{body}}}
   
-  {{#each infoNotifications}}
-    {{this}}
-  {{/each}}
+    {{#each infoNotifications}}
+  <div class="error">
+      <span>
+        {{this}}
+      </span>
+  </div>
+    {{/each}}
+
 
   <script src="/javascripts/jquery-3.3.1.slim.min.js"></script>
   <script src="/javascripts/popper.min.js"></script>
