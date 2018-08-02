@@ -16,6 +16,17 @@ router.get('/', (req, res, next) => {
     });
 });
 
+router.post('/', (req, res, next) => {
+  const { filter } = req.body;
+Group.find({ name: { $regex: `${filter}` } }).populate('members')
+    .then(groups => {
+      res.render('groups', { groups });
+    })
+    .catch(error => {
+      next(error);
+    });
+});
+
 /* GET addGroups */
 router.get('/add', (req, res, next) => {
   res.render('add_group');

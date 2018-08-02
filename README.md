@@ -70,6 +70,7 @@ Logout:
 
 List groups:
     GET /groups
+    POST /groups/:filter
 
 Detail groups: 
     GET /groups/:id
