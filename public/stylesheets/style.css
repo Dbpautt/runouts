@@ -405,3 +405,11 @@ ul {
 .btn-return-groups {
   margin: 10px;
 }
+
+
+/* group list */
+
+.search-container {
+  margin-top: 80px;
+  width: 90%;
+}
