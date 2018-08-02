@@ -1,6 +1,14 @@
 <div class="list-title">
     <h2>GROUPS</h2>
 </div>
+
+<form method="POST" action="/groups/" class="form-search-groups">
+    <div class="search-container">
+        <input type="search" class="form-control input-search" name="filter" placeholder="Search" />
+        <button class="btn btn-outline-success btn-search" type="submit">Search</button>
+    </div>
+</form>
+
 <ul class="groups-list">
     {{#each groups}}
     <div class="groups-item">

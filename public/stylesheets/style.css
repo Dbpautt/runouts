@@ -262,7 +262,7 @@ a {
 }
 
 .groups-list {
-  margin-top: 70px;
+  margin-top: 40px;
 }
 
 
@@ -292,6 +292,7 @@ ul {
   top: 56px;
   z-index: 1000;
   width: 100%;
+  padding-top: 5px;
 }
 
 .users-list {
@@ -347,6 +348,7 @@ ul {
 
 .dropdown-toggle {
   border-color: #ff9100;
+  margin-right: 10px;
 }
 
 .card .dropdown-item {
@@ -413,4 +415,21 @@ ul {
 
 .btn-return-groups {
   margin: 10px;
+}
+
+
+/* group list */
+
+.form-search-groups {
+  margin-top: 60px;
+  width: 90%;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.input-search {
+  margin: 0 10px 0 10px;
 }
