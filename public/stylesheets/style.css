@@ -312,7 +312,14 @@ ul {
 
 .options {
   margin-top: 30px;
-  
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.btn-group-create {
+  width: 30%;
 }
 
 .group-detail a {
@@ -364,4 +371,33 @@ ul {
   color: white;
   border-color: #ff9100;
   margin-top: 20px;
+}
+
+/*  add group form */
+
+.form-add-group {
+  margin: 70px;
+}
+
+.btn-add {
+  background-color: #ff9100;
+  color: white;
+  border-color: #ff9100;
+  margin-top: 20px;
+}
+
+.form-inputs {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.error{
+  text-align: center;
+  background-color: #e61428;
+  border:1px solid #f5aca6;
+  color: white;
+  border-radius:10px;
+  font-family:Tahoma,Geneva,Arial,sans-serif;font-size:15px;
+  padding:10px 10px 10px 10px;
+  margin:10px;
 }

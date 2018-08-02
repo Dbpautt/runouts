@@ -1,25 +1,27 @@
-<h2>Create a group</h2>
+<div class="list-title">  
+  <h2>Create a group</h2>
+</div>
 
-<form method="POST" action="/groups/add" class="form-addgroup">
-  <label>Name: </label>
+<form method="POST" action="/groups/add" class="form-add-group">
+  <label class="form-inputs">Name: </label>
   <input class="field form-control" type="text" name="name" placeholder="Crazy Runners"/>
 
-  <label>Day: </label>
+  <label class="form-inputs">Day: </label>
   <input class="field form-control" type="text" name="day" placeholder="Monday"/>
 
-  <label>Hour: </label>
+  <label class="form-inputs">Hour: </label>
   <input class="field form-control" type="text" name="hour" placeholder="17:30"/> 
   
-  <label>Place: </label>
+  <label class="form-inputs">Place: </label>
   <input class="field form-control" type="text" name="place" placeholder="Ironhack"/> 
 
-  <label>Description: </label>
+  <label class="form-inputs">Description: </label>
   <input class="field form-control" type="text" name="description" /> 
 
   {{ message }}
 
   <div class="field submit div-addgroup">
-    <button type="submit" class="btn btn-lg btn-primary btn-block">Create</button>
+    <button type="submit" class="btn btn-lg btn-primary btn-block btn-add">Create</button>
   </div>
 </form>
 
