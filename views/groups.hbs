@@ -2,34 +2,12 @@
     <h2>GROUPS</h2>
 </div>
 
-
-
-
-
-<div class="search-container">
-	<div class="row">
-        <div class="col-md-6">
-    		<h2>Custom search field</h2>
-            <div id="custom-search-input">
-                <div class="input-group col-md-12">
-                    <input type="text" class="form-control input-lg" placeholder="Buscar" />
-                    <span class="input-group-btn">
-                        <button class="btn btn-info btn-lg" type="button">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </span>
-                </div>
-            </div>
-        </div>
-	</div>
-</div>
-
-
-
-
-
-
-
+<form method="POST" action="/groups/" class="form-search-groups">
+    <div class="search-container">
+        <input type="search" class="form-control input-search" name="filter" placeholder="Search" />
+        <button class="btn btn-outline-success btn-search" type="submit">Search</button>
+    </div>
+</form>
 
 <ul class="groups-list">
     {{#each groups}}
