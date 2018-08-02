@@ -1,5 +1,6 @@
 <section class="profile-container">
-    <img src="/images/profile.png" alt="" class="profile-img">
+    <img src="{{ user.imgPath }}" alt="" class="profile-img">
+    {{!-- <img src="/images/profile.png" alt="" class="profile-img"> --}}
   <section class="profile-header">
     <h2>{{ user.username }}</h2>
     {{#ifCond currentUser._id  user._id }}

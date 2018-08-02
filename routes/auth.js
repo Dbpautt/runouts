@@ -1,10 +1,13 @@
 const express = require('express');
+
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 const User = require('../models/user');
 const notifications = require('../notifications');
+
+const uploadCloud = require('../config/cloudinary');
 
 
 /* GET signup */
@@ -14,8 +17,15 @@ router.get('/signup', (req, res, next) => {
 });
 
 /* POST signup */
-router.post('/signup', (req, res, next) => {
+router.post('/signup', uploadCloud.single('imgPath'), (req, res, next) => {
   const { username, password, email } = req.body;
+  console.log(req.file)
+  // if (req.file) {
+    const imgPath = req.file.url;
+    const imgName = req.file.originalname;
+  // }
+  
+
   if (!username || !password || !email){
     req.flash('info', notifications.noEmptyFields)
     return res.redirect('/auth/signup')
@@ -31,7 +41,7 @@ router.post('/signup', (req, res, next) => {
         // user no exists
         const salt = bcrypt.genSaltSync(saltRounds);
         const hashedPassword = bcrypt.hashSync(password, salt);
-        const user = new User({ username, password: hashedPassword, email });
+        const user = new User({ username, password: hashedPassword, email, imgPath, imgName });
         req.session.currentUser = user;
         user.save();
         res.redirect(`/profile/${user._id}`);

@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -8,7 +10,6 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const authMiddlewares = require('./middlewares/auth');
 const flash = require('connect-flash');
-require('dotenv').config();
 
 require('./handlebarsjs/helpers');
 
