@@ -37,9 +37,9 @@ router.post('/add', (req, res, next) => {
       return res.redirect('/groups/add');
     } else {
       //group no exists
-      owner = req.session.currentUser;
+      owner = req.session.currentUser._id;
       const members = [];
-      members.push(req.session.currentUser);
+      members.push(req.session.currentUser._id);
       const group = new Group({ name, description, day, hour, place, owner, members });
       group.save();
       res.redirect('/groups');
@@ -52,16 +52,16 @@ router.post('/add', (req, res, next) => {
 
 /* JOIN groups */
 router.post('/:id', (req, res, next) => {
-  const { id } = req.body;
-  Group.findOne({ id })
-  .then(group => {
-    if(group) {
-      console.log(group.members);
-      group.members.push(req.session.currentUser);
-      console.log(group.members);
-      group.save();
-      res.redirect('/groups');
-    }
+  const { id } = req.params;
+  console.log(id);
+  Group.find({ "$and": [{ _id: id }, { members: { "$nin": [req.session.currentUser._id] } } ] } )
+    .then(group => {
+      if (group.length === 1) {
+        group[0].members.push(req.session.currentUser._id);
+        group[0].save();
+      }
+
+    res.redirect('/groups');
   })
   .catch(error => {
     next(error);

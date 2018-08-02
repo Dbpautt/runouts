@@ -75,7 +75,7 @@ Detail groups:
     GET /groups/:id
     
 Join a group:
-    POST /groups/:id/join
+    POST /groups/:id
 
 Profile: 
     GET /profile/:id
