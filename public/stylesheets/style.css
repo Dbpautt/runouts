@@ -180,9 +180,18 @@ a {
 /* profile */
 
 .profile-img {
-  width: 70px;
+  width: 150px;
+  height: 150px;
   margin-left: 10px;
   border-radius: 50%;
+  display: block;
+}
+.profile-img-cards {
+  width: 70px;
+  height: 70px;
+  margin-left: 10px;
+  border-radius: 50%;
+  display: block;
 }
 
 .button-add {

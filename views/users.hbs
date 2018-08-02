@@ -5,7 +5,8 @@
     {{#each users}}
     <div class="users-item">
         <div class="card">
-            <img src="/images/profile.png" alt="" class="profile-img">
+              <img src="{{ this.imgPath }}" alt="" class="profile-img-cards">
+            {{!-- <img src="/images/profile.png" alt="" class="profile-img"> --}}
             <a href="/profile/{{ this._id }}">{{ username }}</a>
         </div>
     </div>
