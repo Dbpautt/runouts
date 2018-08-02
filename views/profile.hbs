@@ -1,0 +1,27 @@
+<section class="profile-container">
+    <img src="/images/profile.png" alt="" class="profile-img">
+  <section class="profile-header">
+    <h2>{{ user.username }}</h2>
+    {{#ifCond currentUser._id  user._id }}
+      <p>{{ user.email }}</p>
+    {{/ifCond}}
+  <div class="profile-groups-title-container">
+    {{#ifCond currentUser._id  user._id }}
+      <a href="/groups/add" class="btn btn-success button-add" role="button" aria-pressed="true">+</a>
+    {{/ifCond}}
+  </div>
+  <ul>
+    {{#each groups}}
+      <div class="profile-card">
+        <div class="profile-card-body">
+          <h4><a class="profile-card-title" href="/groups/{{ this._id }}">{{ this.name }}</a></h4>
+        </div>
+      </div>
+    {{/each}}
+  </ul>
+  </section>
+</section>
+
+
+
+

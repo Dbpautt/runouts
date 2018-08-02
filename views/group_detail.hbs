@@ -1,0 +1,26 @@
+<div class="list-title">
+    <h2>Group details</h2>
+</div>
+
+<form method="POST" action="/groups/{{ id }}" class="group-detail-item form-addgroup">
+    <div class="group-detail">
+        <h3>{{ name }}</h3>
+        <p>
+            <h4>Day:  </h4><label>{{ day }}</label>
+        </p>
+        <p>
+            <h4>Hour: </h4><label>{{ hour }}</label>
+        </p>
+        <p>
+            <h4>Place: </h4><label>{{ place }}</label>
+        </p>
+        <p>
+            <h4>Description:</h4><label> {{ description }}</label>
+        </p>
+        <div class="options">
+            <button type="submit" class="btn btn-primary btn-lg btn-login btn-group-create">Join</button>
+        </div>
+    </div>
+</form>
+
+<button class="btn btn-primary btn-lg btn-login btn-group-create btn-return-groups" onclick="window.location.href='/groups'">Groups</button>
