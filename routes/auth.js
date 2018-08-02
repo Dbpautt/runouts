@@ -59,7 +59,7 @@ router.post('/login', (req, res, next) => {
     .then(user => {
       if(!user){
         req.flash('info', notifications.incorrectLogin);
-        res.redirect('/auth/login');
+        return res.redirect('/auth/login');
       }
       if(bcrypt.compareSync(password, user.password)){
         req.session.currentUser = user;
