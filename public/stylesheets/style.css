@@ -312,7 +312,14 @@ ul {
 
 .options {
   margin-top: 30px;
-  
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.btn-group-create {
+  width: 30%;
 }
 
 .group-detail a {
