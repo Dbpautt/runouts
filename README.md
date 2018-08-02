@@ -125,7 +125,7 @@ User
 
 [Runouts](https://github.com/Arkhanne/runouts)
 
-[Deploy Link](http://heroku.com)
+[Deploy Link](http://runouts.herokuapp.com/)
 
 ### Slides.com
 
