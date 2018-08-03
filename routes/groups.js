@@ -23,7 +23,8 @@ router.get('/add', (req, res, next) => {
 
 /* POST addGroups */
 router.post('/add', (req, res, next) => {
-  const { name, description, day, hour, place } = req.body;
+  console.log(req.body);
+  const { name, description, day, hour, place, geocoder } = req.body;
   if (!name){
     req.flash('info', notifications.noEmptyFields)
     return res.redirect('/groups/add')
@@ -40,6 +41,8 @@ router.post('/add', (req, res, next) => {
       owner = req.session.currentUser._id;
       const members = [];
       members.push(req.session.currentUser._id);
+      // place = geocoder.center
+      
       const group = new Group({ name, description, day, hour, place, owner, members });
       group.save();
       res.redirect('/groups');

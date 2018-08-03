@@ -12,11 +12,17 @@
   <label class="form-inputs">Hour: </label>
   <input class="field form-control" type="text" name="hour" placeholder="17:30"/> 
   
-  <label class="form-inputs">Place: </label>
-  <input class="field form-control" type="text" name="place" placeholder="Ironhack"/> 
+  <label class="form-inputs" hidden>Place: </label>
+  <input id="place" class="field form-control" type="text" name="place" placeholder="Ironhack" hidden/> 
 
   <label class="form-inputs">Description: </label>
   <input class="field form-control" type="text" name="description" /> 
+
+
+          <div class="map-container map-pos">
+            <div id='map'></div>
+            <div id='geocoder' class='geocoder' name="geocoder"></div>
+        </div>
 
   {{ message }}
 
