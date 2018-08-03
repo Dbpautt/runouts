@@ -5,6 +5,7 @@ const nodemailer = require('nodemailer');
 const Group = require('../models/group');
 const User = require('../models/user');
 const notifications = require('../notifications');
+const idCheckerGroup = require('../middlewares/idcheckerGroup');
 
 let transporter = nodemailer.createTransport({
   service: 'Gmail',
@@ -112,7 +113,7 @@ router.post('/:id', (req, res, next) => {
   })
 });
 
-router.get('/:id', (req, res, next) => {
+router.get('/:id', idCheckerGroup, (req, res, next) => {
   const { id } = req.params;
   Group.findById(id)
     .then(group => {
