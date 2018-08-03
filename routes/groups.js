@@ -87,7 +87,7 @@ router.post('/:id', (req, res, next) => {
           to: req.session.currentUser.email,
           subject: 'Runouts group information', 
           text: 'This message has been sent by runouts app',
-          html: `<b>You have joined the ${group[0].name} group</b><br><br>Day: ${group[0].name}<br>Hour: ${group[0].hour}<br>Place: ${group[0].place}<br>Description: ${group[0].description}`
+          html: `<b>You have joined the ${group[0].name} group</b><br><br>Day: ${group[0].name}<br>Hour: ${group[0].hour}<br>Description: ${group[0].description}`
         })
         .then(info => console.log(info))
         .catch(error => console.log(error))
