@@ -28,7 +28,7 @@ router.get('/', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   const { filter } = req.body;
-Group.find({ name: { $regex: `${filter}` } }).populate('members')
+Group.find({ name: { $regex: `${filter}` } }).sort('name').populate('members')
     .then(groups => {
       res.render('groups', { groups });
     })
