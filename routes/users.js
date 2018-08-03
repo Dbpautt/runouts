@@ -6,7 +6,7 @@ const Group = require('../models/group');
 
 /* GET users */
 router.get('/', (req, res, next) => {
-  User.find()
+  User.find().sort('username')
     .then(users => {
       users.forEach((user) => {
         Group.find({ members : user._id })
