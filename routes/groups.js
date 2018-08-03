@@ -1,13 +1,33 @@
 const express = require('express');
 const router = express.Router();
+const nodemailer = require('nodemailer');
 
 const Group = require('../models/group');
 const User = require('../models/user');
 const notifications = require('../notifications');
 
+let transporter = nodemailer.createTransport({
+  service: 'Gmail',
+  auth: {
+    user: 'arkhanne',
+    pass: 'G0m0a1i2l2' 
+  }
+});
+
 /* GET groups */
 router.get('/', (req, res, next) => {
   Group.find().select({ "name": 1}).populate('members')
+    .then(groups => {
+      res.render('groups', { groups });
+    })
+    .catch(error => {
+      next(error);
+    });
+});
+
+router.post('/', (req, res, next) => {
+  const { filter } = req.body;
+Group.find({ name: { $regex: `${filter}` } }).populate('members')
     .then(groups => {
       res.render('groups', { groups });
     })
@@ -56,11 +76,31 @@ router.post('/add', (req, res, next) => {
 /* JOIN groups */
 router.post('/:id', (req, res, next) => {
   const { id } = req.params;
-  Group.find({ "$and": [{ _id: id }, { members: { "$nin": [req.session.currentUser._id] } } ] } )
+  Group.find({ "$and": [{ _id: id }, { members: { "$nin": [req.session.currentUser._id] } } ] } ).populate('owner')
     .then(group => {
       if (group.length === 1) {
         group[0].members.push(req.session.currentUser._id);
         group[0].save(); 
+        
+        transporter.sendMail({
+          from: `"${group[0].owner.username}" <${group[0].owner.email}>`,
+          to: req.session.currentUser.email,
+          subject: 'Runouts group information', 
+          text: 'This message has been sent by runouts app',
+          html: `<b>You have joined the ${group[0].name} group</b><br><br>Day: ${group[0].name}<br>Hour: ${group[0].hour}<br>Place: ${group[0].place}<br>Description: ${group[0].description}`
+        })
+        .then(info => console.log(info))
+        .catch(error => console.log(error))
+
+        transporter.sendMail({
+          from: `"Runouts" <runouts@runouts.com>`,
+          to: group[0].owner.email,
+          subject: 'New member in your group', 
+          text: 'This message has been sent by runouts app',
+          html: `<b>${req.session.currentUser.username} has joined the ${group[0].name} group</b>`
+        })
+        .then(info => console.log(info))
+        .catch(error => console.log(error))
       } else {
         req.flash('error', notifications.alreadyJoined);
         res.redirect(`/groups/${id}`);

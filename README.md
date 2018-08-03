@@ -70,6 +70,7 @@ Logout:
 
 List groups:
     GET /groups
+    POST /groups/:filter
 
 Detail groups: 
     GET /groups/:id
@@ -124,7 +125,7 @@ User
 
 [Runouts](https://github.com/Arkhanne/runouts)
 
-[Deploy Link](http://heroku.com)
+[Deploy Link](http://runouts.herokuapp.com/)
 
 ### Slides.com
 

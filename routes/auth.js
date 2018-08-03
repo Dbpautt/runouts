@@ -20,11 +20,13 @@ router.get('/signup', (req, res, next) => {
 router.post('/signup', uploadCloud.single('imgPath'), (req, res, next) => {
   const { username, password, email } = req.body;
   console.log(req.file)
-  // if (req.file) {
-    const imgPath = req.file.url;
-    const imgName = req.file.originalname;
-  // }
-  
+  let imgPath = '';
+  let imgName = '';
+ 
+  if (req.file) {
+    imgPath = req.file.url;
+    imgName = req.file.originalname;
+  }
 
   if (!username || !password || !email){
     req.flash('info', notifications.noEmptyFields)
