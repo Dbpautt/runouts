@@ -17,7 +17,7 @@ let transporter = nodemailer.createTransport({
 
 /* GET groups */
 router.get('/', (req, res, next) => {
-  Group.find().select({ "name": 1}).populate('members')
+  Group.find().sort('name').select({ "name": 1}).populate('members')
     .then(groups => {
       res.render('groups', { groups });
     })
