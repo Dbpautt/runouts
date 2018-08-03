@@ -6,17 +6,27 @@
     <div class="group-detail">
         <h3>{{ name }}</h3>
         <p>
-            <h4>Day:  </h4><label>{{ day }}</label>
+            <h4>Day: </h4>
+            <label>{{ day }}</label>
         </p>
         <p>
-            <h4>Hour: </h4><label>{{ hour }}</label>
+            <h4>Hour: </h4>
+            <label>{{ hour }}</label>
+        </p>
+        <p >
+            <label id="place" hidden>{{ place }}</label>
         </p>
         <p>
-            <h4>Place: </h4><label>{{ place }}</label>
+            <h4>Description:</h4>
+            <label> {{ description }}</label>
         </p>
-        <p>
-            <h4>Description:</h4><label> {{ description }}</label>
-        </p>
+
+        <div class="map-container">
+            <div id='map'></div>
+            <div id='geocoder' class='geocoder' name="geocoder" hidden></div>
+
+        </div>
+
         <div class="options">
             <button type="submit" class="btn btn-primary btn-lg btn-login btn-group-create">Join</button>
         </div>

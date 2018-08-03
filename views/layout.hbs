@@ -7,6 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel='stylesheet' href="/stylesheets/bootstrap.min.css" />
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' type='text/css' />
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
+
   <title>{{title}}</title>
 </head>
 
@@ -40,28 +46,26 @@
     </div>
   </nav>
 
-  {{{body}}} 
-  
-  {{#each infoNotifications}}
-    <div class="error">
-        <span>
-          {{this}}
-        </span>
-    </div>
-  {{/each}}
-
-  {{#each errorNotifications}}
-    <div class="error">
-        <span>
-          {{this}}
-        </span>
-    </div>
+  {{{body}}} {{#each infoNotifications}}
+  <div class="error">
+    <span>
+      {{this}}
+    </span>
+  </div>
+  {{/each}} {{#each errorNotifications}}
+  <div class="error">
+    <span>
+      {{this}}
+    </span>
+  </div>
   {{/each}}
 
 
   <script src="/javascripts/jquery-3.3.1.slim.min.js"></script>
   <script src="/javascripts/popper.min.js"></script>
   <script src="/javascripts/bootstrap.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js"></script>
+  <script src="/javascripts/main.js"></script>
 </body>
 
 </html>
