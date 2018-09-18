@@ -5,6 +5,7 @@ const User = require('../models/user');
 const Group = require('../models/group');
 const idCheckUser = require('../middlewares/idcheckerUser');
 
+// @review nested promises
 router.get('/:id', idCheckUser, (req, res, next) => {
   const { id } = req.params;
   User.findById(id)

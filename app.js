@@ -20,7 +20,7 @@ const authRouter = require('./routes/auth');
 const profileRouter = require('./routes/profile');
 
 const app = express();
-
+// @review The then and catch do ... what here?
 mongoose.connect(process.env.MONGODB_URI)
 .then()
 .catch();

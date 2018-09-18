@@ -3,6 +3,7 @@ const router = express.Router();
 const nodemailer = require('nodemailer');
 
 const Group = require('../models/group');
+// @review Is this const used?
 const User = require('../models/user');
 const notifications = require('../notifications');
 const idCheckerGroup = require('../middlewares/idcheckerGroup');
